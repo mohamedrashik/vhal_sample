@@ -1,0 +1,37 @@
+package {
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+android_app {
+    name: "CarAppDroid",
+    srcs: [
+        "app/src/main/**/*.java",  // Java source files
+        "app/src/main/**/*.kt",    // Kotlin source files, if any
+    ],
+
+    resource_dirs: [
+        "app/src/main/res",  // Resource directory
+    ],
+   
+    platform_apis: true,
+    certificate: "platform",
+    privileged: true,
+    libs: ["android.car"],
+    manifest: "app/src/main/AndroidManifest.xml",
+    static_libs: [
+        "android.car",
+        "androidx.appcompat_appcompat",
+        "androidx.core_core-ktx",
+        "com.google.android.material_material",
+	    "androidx.activity_activity",
+	    "androidx-constraintlayout_constraintlayout",
+    ],
+    required: ["allowed_privapp_androidguy.car.app"]
+}
+
+prebuilt_etc {
+    name: "allowed_privapp_androidguy.car.app",
+    sub_dir: "permissions",
+    src: "androidguy.car.app.xml",
+    filename_from_src: true,
+}
