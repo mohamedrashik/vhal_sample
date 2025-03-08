@@ -8,10 +8,8 @@
         android:name="android.hardware.type.automotive"
         android:required="true" />
 
-    <uses-permission android:name="android.car.permission.CAR_SPEED"
-        />
-    <uses-permission android:name="android.permission.READ_VEHICLE_SPEED"
-        />
+    <uses-permission android:name="android.car.permission.CAR_SPEED" />
+    <uses-permission android:name="android.permission.READ_VEHICLE_SPEED" />
 
     <application
         android:allowBackup="true"

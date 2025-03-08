@@ -61,11 +61,11 @@ class MainActivity : AppCompatActivity() {
 
     private val callback: CarPropertyEventCallback = object : CarPropertyEventCallback {
         override fun onChangeEvent(p: CarPropertyValue<*>?) {
-            text.text = "${p?.value}"
+            text.text = "Speed: ${p?.value} km/h"
         }
 
         override fun onErrorEvent(p0: Int, p1: Int) {
-            text.text = "ERROR"
+            text.text = "ERROR: Unable to read speed"
         }
     }
 
